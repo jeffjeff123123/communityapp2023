@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.communityApp2023.dao.ShopDao">
+    <resultMap type="org.example.communityApp2023.entity.Shop" id="shopMap">
+        <id column="shop_id" property="shopId" />
+        <id column="shop_name" property="shopName" />
+        <id column="shop_addr" property="shopAddr" />
+        <id column="phone" property="phone" />
+        <id column="shop_img" property="shopImg" />
+        <id column="priority" property="priority" />
+        <id column="create_time" property="createTime" />
+        <id column="last_edit_time" property="lastEditTime" />
+        <id column="enable_status" property="enableStatus" />
+        <id column="advice" property="advice" />
+        <association property="area" column="area_id"
+            javaType="org.example.communityApp2023.entity.Area">
+            <id column="area_id" property="areaId"/>
+            <result column="area_name" property="areaName"/>
+        </association>
+        <association property="shopCategory" column="shop_category_id"
+                     javaType="org.example.communityApp2023.entity.ShopCategory">
+            <id column="shop_category_id" property="shopCategoryId"/>
+            <result column="shop_category_name" property="shopCategoryName"/>
+        </association>
+        <association property="owner" column="user_id"
+                     javaType="org.example.communityApp2023.entity.PersonInfo">
+            <id column="user_id" property="userId"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+
+    <insert id="insertShop" useGeneratedKeys="true" keyColumn="shop_id" keyProperty="shopId">
+        INSERT INTO tb_shop(owner_id, aera_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img,
+        priority, create_time, last_edit_time, enable_status, advice)
+        VALUES(#{owner.userId}, #{area.areaId}, #{shopCategorry.shopCategoryId}, #{shopName},
+        #{shopDesc}, #{shopAddr}, #{phone}, #{shopImg}, #{priority}, #{createTime}, #{lastEditTime}, #{enableStatus}, #{advice})
+    </insert>
+
+    <update id="updateShop" parameterType="org.example.communityApp2023.entity.Shop">
+        UPDATE tb_shop
+        <set>
+            <if test="shopName != null">shop_name=#{shopName},</if>
+        </set>
+        WHERE shop_id=${shopId}
+    </update>
+</mapper>
+
