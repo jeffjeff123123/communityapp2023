@@ -123,7 +123,7 @@
     </dependencies>
 
     <build>
-        <finalName>communityApp</finalName>
+        <finalName>communityapp2023</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
