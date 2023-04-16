@@ -79,7 +79,7 @@
     </appender>
 
 
-    <logger name="org.example" level="${log.level}" additivity="true">
+    <logger name="org.example.communityApp2023" level="${log.level}" additivity="true">
         <appender-ref ref="debugAppender"/>
         <appender-ref ref="infoAppender"/>
         <appender-ref ref="errorAppender"/>
