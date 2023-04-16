@@ -1,4 +1,4 @@
-package org.example.community.service;
+package org.example.community;
 
 
 import org.junit.runner.RunWith;

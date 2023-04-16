@@ -1,6 +1,6 @@
 package org.example.community.dao;
 
-import org.example.community.service.BaseTest;
+import org.example.community.BaseTest;
 import org.example.communityApp2023.dao.AreaDao;
 import org.example.communityApp2023.entity.Area;
 import org.junit.Test;
