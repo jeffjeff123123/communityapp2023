@@ -1,6 +1,7 @@
 package org.example.communityApp2023.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Product {
     private Long productId;
@@ -14,6 +15,9 @@ public class Product {
     private Date createTime;
     private Date lastEditTime;
     private Integer enableStatus;
+    private List<ProductImg> productImgList;
+    private ProductCategory productCategory;
+    private Shop shop;
 
     public Long getProductId() {
         return productId;
@@ -101,5 +105,29 @@ public class Product {
 
     public void setEnableStatus(Integer enableStatus) {
         this.enableStatus = enableStatus;
+    }
+
+    public List<ProductImg> getProductImgList() {
+        return productImgList;
+    }
+
+    public void setProductImgList(List<ProductImg> productImgList) {
+        this.productImgList = productImgList;
+    }
+
+    public ProductCategory getProductCategory() {
+        return productCategory;
+    }
+
+    public void setProductCategory(ProductCategory productCategory) {
+        this.productCategory = productCategory;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
     }
 }
