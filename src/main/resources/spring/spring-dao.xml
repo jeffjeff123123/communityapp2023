@@ -35,6 +35,6 @@
 <!--    配置扫描dao接口包，动态实现dao接口，注入spring容器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="org.example.communityApp2023.dto"/>
+        <property name="basePackage" value="org.example.communityApp2023.dao"/>
     </bean>
 </beans>
